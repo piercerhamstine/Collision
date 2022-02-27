@@ -10,11 +10,16 @@ public:
     Collider(const sf::Vector2f colSize, const sf::Vector2f colPos);
     Collider();
     ~Collider();
+
+    void SetTrigger(bool isTrigger);
+    bool Intersects(const Collider& other);
 private:
     // Width and height of collider.
     sf::Vector2f colSize;
     // Position of the center of the collider.
     sf::Vector2f colPos;
+    // If the collider should resolve collisions with it.
+    bool isTrigger;
 };
 
 #endif

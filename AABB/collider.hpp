@@ -6,11 +6,14 @@
 class Collider
 {
 public:
-    Collider(float sizeX, float sizeY, float posX, float posY) : colSize(sizeX,sizeY), colPos(posX,posY){};
-    Collider(const sf::Vector2f colSize, const sf::Vector2f colPos) : colSize(colSize), colPos(colPos){};
-    Collider():colSize(){};
+    Collider(float sizeX, float sizeY, float posX, float posY);
+    Collider(const sf::Vector2f colSize, const sf::Vector2f colPos);
+    Collider();
+    ~Collider();
 private:
+    // Width and height of collider.
     sf::Vector2f colSize;
+    // Position of the center of the collider.
     sf::Vector2f colPos;
 };
 

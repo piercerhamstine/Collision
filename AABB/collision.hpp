@@ -10,7 +10,7 @@ public:
     Collision(Collider& col);
     ~Collision();
 
-
+    bool GetCollision(const Collision& body);
 private:
     Collider& col;
 };

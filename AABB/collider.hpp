@@ -6,13 +6,19 @@
 class Collider
 {
 public:
+    //Constructors
     Collider(float sizeX, float sizeY, float posX, float posY);
     Collider(const sf::Vector2f colSize, const sf::Vector2f colPos);
     Collider();
     ~Collider();
 
+    // Functions
+    virtual bool Intersects(const Collider& other);
+    
+    // Setters
     void SetTrigger(bool isTrigger);
-    bool Intersects(const Collider& other);
+    // Getters
+    sf::Vector2f GetBounds();
 private:
     // Width and height of collider.
     sf::Vector2f colSize;

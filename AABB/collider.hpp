@@ -14,7 +14,7 @@ public:
 
     // Functions
     virtual bool Intersects(const Collider& other);
-    
+    virtual void CollisionResolution();
     // Setters
     void SetTrigger(bool isTrigger);
     // Getters

@@ -2,9 +2,12 @@
 #include <SFML/Graphics.hpp>
 #include <random>
 
+#include "box.hpp";
+
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(800, 400), "SFML works!");
+
 
     while (window.isOpen())
     {

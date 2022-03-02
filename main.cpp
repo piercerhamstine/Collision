@@ -2,12 +2,13 @@
 #include <SFML/Graphics.hpp>
 #include <random>
 
-#include "box.hpp";
+#include "Box/box.hpp"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(800, 400), "SFML works!");
 
+    Box b(10, 10);
 
     while (window.isOpen())
     {
@@ -19,7 +20,7 @@ int main()
         }
 
             window.clear();
-            
+            window.draw(b);
             window.display();
     }
 

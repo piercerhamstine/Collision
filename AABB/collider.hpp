@@ -23,7 +23,7 @@ public:
 private:
     // Width and height of collider.
     sf::Vector2f colSize;
-    // Position of the center of the collider.
+    // Top left of the collider.
     sf::Vector2f colPos;
     // If the collider should resolve collisions with it.
     bool isTrigger;

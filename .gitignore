@@ -16,5 +16,8 @@ Makefile
 #dlls
 *.dll
 
+#Object files
+*.o
+
 # Executables
 *.exe

@@ -2,7 +2,7 @@
 #define BOX_HPP
 
 #include "SFML/Graphics.hpp"
-//#include "AABB/collider.hpp"
+#include "AABB/collider.hpp"
 
 
 class Box : public sf::Drawable
@@ -13,7 +13,7 @@ public:
 
 private:
     sf::Vector2f widthHeight;
-    //Collider collider;
+    Collider collider;
     sf::RectangleShape rect;
 
     virtual void draw(sf::RenderTarget& rTarget, sf::RenderStates rStates) const;

@@ -13,7 +13,7 @@ bool Collider::Intersects(const Collider& other)
     // Ay1 < by2
     // Ay2 > by1
 
-
+    if(topLeft < )
 
     return 0;
 }

@@ -11,9 +11,9 @@ public:
     Box(sf::Vector2f widthHeight);
     Box(float width, float height);
 
+    Collider collider;
 private:
     sf::Vector2f widthHeight;
-    Collider collider;
     sf::RectangleShape rect;
 
     virtual void draw(sf::RenderTarget& rTarget, sf::RenderStates rStates) const;

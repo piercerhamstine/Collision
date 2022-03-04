@@ -2,13 +2,14 @@
 #define COLLIDER_HPP
 
 #include <SFML/System/Vector2.hpp>
+#include "bounds.hpp"
 
 class Collider
 {
 public:
     //Constructors
-    Collider(float sizeX, float sizeY, float posX, float posY);
-    Collider(const sf::Vector2f colSize, const sf::Vector2f colPos);
+    Collider(float posX, float posY, float sizeX, float sizeY);
+    Collider(const sf::Vector2f colPos, const sf::Vector2f colSize);
     Collider();
     ~Collider();
 
@@ -18,13 +19,18 @@ public:
     
     // Setters
     void SetTrigger(bool isTrigger);
+
     // Getters
-    sf::Vector2f GetBounds();
+    Bounds GetBounds();
 private:
     // Width and height of collider.
     sf::Vector2f colSize;
     // Top left of the collider.
     sf::Vector2f colPos;
+
+    // Bounds of this collider. Top left,right;Bot left,right.
+    Bounds colBounds;
+
     // If the collider should resolve collisions with it.
     bool isTrigger;
 };

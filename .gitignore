@@ -13,10 +13,9 @@
 Make
 Makefile
 
-#dlls
+#Extras
+*.gch
 *.dll
-
-#Object files
 *.o
 
 # Executables

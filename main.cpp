@@ -3,13 +3,14 @@
 #include <random>
 
 #include "AABB/collider.hpp"
+#include "Box/box.hpp"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(800, 400), "SFML works!");
 
-    Collider c1(sf::Vector2f(0,0), sf::Vector2f(1,1));
-    Collider c2(sf::Vector2f(1./2,1./2), sf::Vector2f(1,1));
+    Box b1(10, 10);
+    Box b2(10,10);
 
     while (window.isOpen())
     {
@@ -21,6 +22,8 @@ int main()
         }
 
             window.clear();
+            window.draw(b1);
+            window.draw(b2);
             window.display();
     }
 

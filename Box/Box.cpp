@@ -11,7 +11,11 @@ void Box::draw(sf::RenderTarget& rTarget, sf::RenderStates rStates) const
     rTarget.draw(rect, sf::RenderStates::Default);
 };
 
+void Box::SetPos(float x, float y)
+{
+    rect.setPosition(x, y);
+};
+
 void Box::Update()
 {
-    
 };

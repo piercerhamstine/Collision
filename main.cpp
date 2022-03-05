@@ -12,6 +12,8 @@ int main()
     Box b1(10, 10);
     Box b2(10,10);
 
+    b2.SetPos(5,5);
+
     while (window.isOpen())
     {
         sf::Event event;

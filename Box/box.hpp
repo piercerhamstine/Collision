@@ -2,16 +2,17 @@
 #define BOX_HPP
 
 #include "SFML/Graphics.hpp"
-#include "AABB/collider.hpp"
+#include "../AABB/collider.hpp"
 
 
 class Box : public sf::Drawable
 {
 public:
-    Box(sf::Vector2f widthHeight);
+    Box(sf::Vector2f size);
     Box(float width, float height);
-
+    Box(sf::Vector2f pos, sf::Vector2f size);
     void Update();
+    void SetPos(float x, float y);
 
     Collider collider;
 private:

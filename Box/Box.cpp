@@ -19,3 +19,8 @@ void Box::SetPos(float x, float y)
 void Box::Update()
 {
 };
+
+void Box::SetColor(sf::Color c)
+{
+    rect.setFillColor(c);
+}

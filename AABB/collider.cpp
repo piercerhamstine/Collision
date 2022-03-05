@@ -30,6 +30,12 @@ bool Collider::Intersects(const Collider& other)
 
 void Collider::CollisionResolution(){};
 
+void Collider::UpdatePos(sf::Vector2f newPos)
+{
+    colPos = newPos;
+    colBounds.Update(newPos, colSize);
+};
+
 Bounds Collider::GetBounds()
 {
     return colBounds;

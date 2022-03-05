@@ -16,9 +16,10 @@ public:
     // Functions
     virtual bool Intersects(const Collider& other);
     virtual void CollisionResolution();
-    
+
     // Setters
     void SetTrigger(bool isTrigger);
+    void UpdatePos(sf::Vector2f newPos);
 
     // Getters
     Bounds GetBounds();

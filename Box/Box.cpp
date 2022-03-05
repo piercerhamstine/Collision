@@ -14,6 +14,7 @@ void Box::draw(sf::RenderTarget& rTarget, sf::RenderStates rStates) const
 void Box::SetPos(float x, float y)
 {
     rect.setPosition(x, y);
+    collider.UpdateBounds();
 };
 
 void Box::Update()

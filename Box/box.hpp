@@ -14,6 +14,8 @@ public:
     void Update();
     void SetPos(float x, float y);
 
+    void SetColor(sf::Color c);
+
     Collider collider;
 private:
     sf::Vector2f pos;

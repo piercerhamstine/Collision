@@ -26,6 +26,12 @@ int main()
             window.clear();
             window.draw(b1);
             window.draw(b2);
+
+            if(b2.collider.Intersects(b1.collider))
+            {
+                b2.SetColor(sf::Color::Green);
+            }
+
             window.display();
     }
 

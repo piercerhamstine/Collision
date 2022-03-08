@@ -1,42 +1,27 @@
 #include "collider.hpp"
 
-Collider::Collider() : colPos(), colSize(), colBounds() {};
+Collider::Collider() : size(), bounds() {};
 
-Collider::Collider(sf::Vector2f pos, sf::Vector2f size) : colPos(pos), colSize(size), colBounds(pos, size) {}; 
+Collider::Collider(sf::Vector2f position, sf::Vector2f size) : size(size), bounds(position, size){};
 
-Collider::~Collider(){};
-
-bool Collider::Intersects(const Collider& other)
+const Bounds Collider::GetBounds()
 {
-    //Conditions For Rectangle Intersect.
-    // Ax1 < bx2
-    // Ax2 > bx1
-    // Ay1 < by2
-    // Ay2 > by1
-
-    int intersect = 0;
-
-    // a.x1 < b.x2
-    intersect = (colBounds.topLeft.x < other.colBounds.topRight.x) % 2;
-    // a.x2 > b.x1
-    intersect = (colBounds.topRight.x > other.colBounds.topLeft.x) % 2;
-    // a.y1 < a.y2
-    intersect = (colBounds.topLeft.y < other.colBounds.botLeft.y) % 2;
-    //a.y2 > b.y1
-    intersect = (colBounds.botLeft.y > other.colBounds.topLeft.y) % 2;
-
-    return intersect;
-}
-
-void Collider::CollisionResolution(){};
-
-void Collider::UpdatePos(sf::Vector2f newPos)
-{
-    colPos = newPos;
-    colBounds.Update(newPos, colSize);
+    return bounds;
 };
 
-Bounds Collider::GetBounds()
+bool Collider::Intersects(const Collider& other) const
 {
-    return colBounds;
-}
+    int intersect = 0;
+
+    // Ax1 <  Bx2
+    // Ax2 > Bx1
+    // Ay1 < By2
+    // Ay2 > By1
+    
+    intersect += (bounds.min.x < other.bounds.max.x);
+    intersect += (bounds.max.x > other.bounds.min.x);
+    intersect += (bounds.min.y < other.bounds.max.y);
+    intersect += (bounds.max.y >  other.bounds.min.y);
+    
+    return (intersect % 4);
+};

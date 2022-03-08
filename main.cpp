@@ -1,18 +1,16 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include <random>
+#include <bitset>
 
 #include "AABB/collider.hpp"
-#include "Box/box.hpp"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(800, 400), "SFML works!");
 
-    Box b1(10, 10);
-    Box b2(10,10);
+    Collider c1(sf::Vector2f(0,0), sf::Vector2f(1,1));
+    Collider c2(sf::Vector2f(5,5), sf::Vector2f(1,1));
 
-    b2.SetPos(5,5);
 
     while (window.isOpen())
     {
@@ -24,14 +22,6 @@ int main()
         }
 
             window.clear();
-            window.draw(b1);
-            window.draw(b2);
-
-            if(b2.collider.Intersects(b1.collider))
-            {
-                b2.SetColor(sf::Color::Green);
-            }
-
             window.display();
     }
 

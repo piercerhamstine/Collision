@@ -11,7 +11,6 @@ int main()
     Collider c1(sf::Vector2f(0,0), sf::Vector2f(1,1));
     Collider c2(sf::Vector2f(5,5), sf::Vector2f(1,1));
 
-
     while (window.isOpen())
     {
         sf::Event event;

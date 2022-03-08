@@ -4,6 +4,8 @@
 #include "SFML/Graphics.hpp"
 #include "bounds.hpp"
 
+#include <iostream>
+
 class Collider
 {
 public:

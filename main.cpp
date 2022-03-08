@@ -9,7 +9,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(800, 400), "SFML works!");
 
     Collider c1(sf::Vector2f(0,0), sf::Vector2f(1,1));
-    Collider c2(sf::Vector2f(5,5), sf::Vector2f(1,1));
+    Collider c2(sf::Vector2f(.5f,.5f), sf::Vector2f(1,1));
 
     while (window.isOpen())
     {

@@ -23,5 +23,5 @@ bool Collider::Intersects(const Collider& other) const
     intersect += (bounds.min.y < other.bounds.max.y);
     intersect += (bounds.max.y >  other.bounds.min.y);
     
-    return (intersect % 4);
+    return (intersect % 4)==0;
 };

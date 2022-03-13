@@ -1,6 +1,7 @@
 #ifndef BOX_HPP
 #define BOX_HPP
 
+
 #include "SFML/Graphics.hpp"
 
 class Box : sf::Drawable

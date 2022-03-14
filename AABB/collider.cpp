@@ -4,6 +4,11 @@ Collider::Collider() : size(), bounds() {};
 
 Collider::Collider(sf::Vector2f position, sf::Vector2f size) : size(size), bounds(position, size){};
 
+void Collider::UpdateBounds(sf::Vector2f position)
+{
+    bounds = Bounds(position, size);
+};
+
 const Bounds Collider::GetBounds()
 {
     return bounds;

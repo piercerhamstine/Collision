@@ -13,7 +13,7 @@ public:
     Collider(sf::Vector2f position, sf::Vector2f size);
 
     bool Intersects(const Collider& other) const;
-
+    void UpdateBounds(sf::Vector2f position);
     const Bounds GetBounds();
 private:
     Bounds bounds;

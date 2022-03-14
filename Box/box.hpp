@@ -12,7 +12,7 @@ public:
     Box(sf::Vector2f size);
     Box(sf::Vector2f pos, sf::Vector2f size);
 
-    bool HasCollision(Collider& other);
+    bool HasCollision(Box& other);
 
     void UpdatePosition(sf::Vector2f position);
 

@@ -10,9 +10,9 @@ void Box::UpdatePosition(sf::Vector2f position)
     rect.setPosition(position);
 };
 
-bool Box::HasCollision(Collider& other)
+bool Box::HasCollision(Box& other)
 {
-    if(collider.Intersects(other))
+    if(collider.Intersects(other.collider))
     {
         return true;
     };

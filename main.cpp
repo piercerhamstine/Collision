@@ -9,7 +9,7 @@ int main()
     Box b1 = Box(sf::Vector2f(0, 0), sf::Vector2f(10,10));
     b1.SetColor(sf::Color::White);
 
-    Box b2 = Box(sf::Vector2f(11,11), sf::Vector2f(10,10));
+    Box b2 = Box(sf::Vector2f(9,9), sf::Vector2f(10,10));
 
     while (window.isOpen())
     {
@@ -22,6 +22,12 @@ int main()
 
             window.clear();
             window.draw(b1);
+
+            if(b2.HasCollision(b1))
+            {
+                b2.SetColor(sf::Color::Green);
+            }
+
             window.draw(b2);
             window.display();
     }

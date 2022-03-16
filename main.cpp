@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Window/Mouse.hpp>
 #include "Box/box.hpp"
 
 int main()
@@ -19,6 +20,9 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
+            
+            sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+            b2.UpdatePosition(sf::Vector2f(mousePos.x, mousePos.y));
 
             window.clear();
             window.draw(b1);
@@ -27,6 +31,10 @@ int main()
             {
                 b2.SetColor(sf::Color::Green);
             }
+            else
+            {
+                b2.SetColor(sf::Color::White);
+            };
 
             window.draw(b2);
             window.display();

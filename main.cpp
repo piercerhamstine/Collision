@@ -3,14 +3,18 @@
 #include <SFML/Window/Mouse.hpp>
 #include "Box/box.hpp"
 
+sf::RenderWindow window;
+Box b1;
+Box b2;
+
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 400), "SFML works!");
+    window.create(sf::VideoMode(800, 400), "Collision Detection");
 
-    Box b1 = Box(sf::Vector2f(0, 0), sf::Vector2f(10,10));
+    b1 = Box(sf::Vector2f(0, 0), sf::Vector2f(10,10));
     b1.SetColor(sf::Color::White);
 
-    Box b2 = Box(sf::Vector2f(9,9), sf::Vector2f(10,10));
+    b2 = Box(sf::Vector2f(9,9), sf::Vector2f(10,10));
 
     while (window.isOpen())
     {

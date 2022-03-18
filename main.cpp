@@ -38,16 +38,28 @@ void HandleMouseClick(sf::Event& event)
     }
 };
 
+void HandleBoxCol()
+{
+    if(b2.HasCollision(b1))
+    {
+        b2.SetColor(sf::Color::Green);
+    }
+    else
+    {
+        b2.SetColor(sf::Color::White);
+    }
+}
+
 int main()
 {
     window.create(sf::VideoMode(800, 400), "Collision Detection");
 
     mouseBox = Box(sf::Vector2f(0, 0), sf::Vector2f(1,1));
 
-    b1 = Box(sf::Vector2f(0, 0), sf::Vector2f(10,10));
+    b1 = Box(sf::Vector2f(0, 0), sf::Vector2f(20,20));
     b1.SetColor(sf::Color::White);
 
-    b2 = Box(sf::Vector2f(9,9), sf::Vector2f(10,10));
+    b2 = Box(sf::Vector2f(9,9), sf::Vector2f(20,20));
 
     while (window.isOpen())
     {
@@ -60,8 +72,10 @@ int main()
             HandleMouseClick(event);
         }
 
+            HandleBoxCol();
+
             mouseBox.UpdatePosition(sf::Vector2f(mousePos.x, mousePos.y));
-            
+
             if(boxDragged != nullptr)
             {
                 boxDragged->UpdatePosition(sf::Vector2f(mousePos.x, mousePos.y));
